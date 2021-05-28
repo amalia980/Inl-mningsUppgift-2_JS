@@ -1,2 +1,3 @@
 Rapport Inlämningsuppgift 2 - Javascript
 
+Jag skriver klart HTML strukturen för att sedan hämta alla taggar och element som behövs för att utföra sökresultat.
