@@ -59,6 +59,8 @@
     height: 100%;
 }
 
+/*result_S and result*/
+
 .search-results .search-result {
     width: 100%;
     height: 100%;
@@ -72,10 +74,14 @@
     overflow: hidden;
 }
 
+/*result_S and result*/
+
 .search-results .search-result-header {
     font-weight: bold;
     font-size: 1.2rem;
 }
+
+/*result_S and result*/
 
 .search-results .search-result-body {
     padding-top: 0.2rem;

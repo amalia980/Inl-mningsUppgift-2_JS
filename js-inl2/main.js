@@ -347,9 +347,31 @@ Finish this function, it should return a HTML element that looks like this:
     </article>
 </li>
 */
+
 function createResultElement(title, description) {
-    console.log("This function is not implemented.");
+    
+    const liTag = document.createElement('li'); //<li> tag
+
+    const articleTag = document.createElement('article'); //<article> tag
+    articleTag.className = "search-result";
+
+    const headerTag = document.createElement('header'); //<header> tag
+    headerTag.className = "search-result-header search-result-section";
+    headerTag.innerText = title; //prints value of title
+
+    const divTag = document.createElement('div'); // <div> tag
+    divTag.className = "search-result-body search-result-section";
+    divTag.innerText = description;  //prints value of description
+
+    
+    liTag.appendChild(articleTag); //<article> inside <li> 
+    articleTag.appendChild(headerTag); // <header> inside <article>
+    articleTag.appendChild(divTag) // <div> inside <article>
+
+    return liTag;
+    
 }
+
 
 // Finish this function
 // takes in a string as an argument and searches the "RESULTS" array to find one or many results
@@ -358,8 +380,16 @@ function createResultElement(title, description) {
 //
 // This should return an array with all matching results.
 function findResult(query) {
+
     console.log("You searched for: ", query, "But this function is not implemented.");
+    const obj = RESULTS.find(item => item.title.toLowerCase() === inputField.value);
+
+    query = console.log(obj);
+    return query;
 }
+
+findResult();
+
 
 inputField.addEventListener("keyup", function(event){
     // search for results
@@ -375,6 +405,6 @@ inputField.addEventListener("keyup", function(event){
             result.description
         )));
     } else {
-        console.log("No results.");
+        alert("No results.");
     }
 });
