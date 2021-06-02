@@ -18,7 +18,7 @@ const RESULTS = [{
 function findResult(query) {
 
     const search = () => RESULTS.filter(
-        item => item.title.toLowerCase().includes(query.toLowerCase())
+        item => item.title.toLowerCase().includes(query.toLowerCase() || item.description.toLowerCase().includes(query.toLowerCase))
     );
 /*
     const userInput = "Jumper";
@@ -28,9 +28,4 @@ function findResult(query) {
     console.log("You searched for: ", userInput, "But this function is not implemented.");
     return query;
     */
-
-    const found = search(inputField);
-    query = console.log(found);
 }
-
-findResult();

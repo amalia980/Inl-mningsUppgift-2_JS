@@ -382,13 +382,13 @@ function createResultElement(title, description) {
 function findResult(query) {
 
     console.log("You searched for: ", query, "But this function is not implemented.");
-    const obj = RESULTS.find(item => item.title.toLowerCase() === inputField.value);
+    const search = () => RESULTS.filter(
+        item => item.title.toLowerCase().includes(query.toLowerCase() || item.description.toLowerCase().includes(query.toLowerCase()))
+    );
 
-    query = console.log(obj);
-    return query;
+    return search;
 }
 
-findResult();
 
 
 inputField.addEventListener("keyup", function(event){
