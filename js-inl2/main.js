@@ -348,6 +348,8 @@ Finish this function, it should return a HTML element that looks like this:
 </li>
 */
 
+//this is how the results should display
+
 function createResultElement(title, description) {
     
     const liTag = document.createElement('li'); //<li> tag
@@ -366,45 +368,50 @@ function createResultElement(title, description) {
     
     liTag.appendChild(articleTag); //<article> inside <li> 
     articleTag.appendChild(headerTag); // <header> inside <article>
-    articleTag.appendChild(divTag) // <div> inside <article>
+    articleTag.appendChild(divTag); // <div> inside <article>
 
     return liTag;
-    
+
 }
 
 
 // Finish this function
-// takes in a string as an argument and searches the "RESULTS" array to find one or many results
-// that matches the string.
+// takes in a string as an argument and searches through the "RESULTS" array to find one or many results that matches the string value(userinput).
 // should compare the title and description of each result.
 //
 // This should return an array with all matching results.
 function findResult(query) {
 
-    console.log("You searched for: ", query, "But this function is not implemented.");
-    const search = () => RESULTS.filter(
-        item => item.title.toLowerCase().includes(query.toLowerCase() || item.description.toLowerCase().includes(query.toLowerCase()))
-    );
+    const foundResults = []; //array
+    const queryLower = query.toLowerCase();
 
-    return search;
+    RESULTS.forEach(function(item) {
+        const title = item.title.toLowerCase();
+        const description = item.description.toLowerCase();
+
+        if(title.includes(queryLower) || description.includes(queryLower)) {
+            foundResults.push(item);
+        }
+    });
+    return foundResults;
 }
-
 
 
 inputField.addEventListener("keyup", function(event){
     // search for results
     const results = findResult(event.target.value);
     
-    // clear previous results
-    resultsArea.innerHTML = '';
+    // this clears previous results
+        resultsArea.innerHTML = '';
 
-    // convert all results objects to HTML elements and push them to our "resultsArea" div.
+    // this converts all results objects to HTML elements and push them to our "resultsArea" div.
     if (results) {
+
         results.forEach(result => resultsArea.appendChild(createResultElement(
             result.title,
             result.description
-        )));
+        ))); 
     } else {
-        alert("No results.");
+        prompt("No results.");
     }
 });

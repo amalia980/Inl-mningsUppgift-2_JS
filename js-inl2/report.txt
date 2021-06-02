@@ -2,3 +2,5 @@ Rapport Inlämningsuppgift 2 - Javascript
 
 Innan jag gör någonting pushar jag upp alla filer till Github så att jag kan se original koden om jag skulle ändra alltför mycket 
 i framtiden.
+
+Jag försöker göra klart alla missade "pusselbitar" från upp och ner.
