@@ -351,6 +351,8 @@ Finish this function, it should return a HTML element that looks like this:
 //this is how the results should display
 
 function createResultElement(title, description) {
+
+    //first section
     
     const liTag = document.createElement('li'); //<li> tag
 
@@ -365,15 +367,15 @@ function createResultElement(title, description) {
     divTag.className = "search-result-body search-result-section";
     divTag.innerText = description;  //prints value of description
 
-    
     liTag.appendChild(articleTag); //<article> inside <li> 
     articleTag.appendChild(headerTag); // <header> inside <article>
     articleTag.appendChild(divTag); // <div> inside <article>
 
+    //error message box  
+
     return liTag;
 
 }
-
 
 // Finish this function
 // takes in a string as an argument and searches through the "RESULTS" array to find one or many results that matches the string value(userinput).
@@ -389,16 +391,21 @@ function findResult(query) {
         const title = item.title.toLowerCase();
         const description = item.description.toLowerCase();
 
-        if(title.includes(queryLower) || description.includes(queryLower)) {
-            foundResults.push(item);
+        if(title.includes(queryLower) || description.includes(queryLower)) {//compares title and description
+            foundResults.push(item); //will display the results
         }
+        else {
+            const error = document.getElementById('error');
+            error.innerText = "sorry, we can't find what you are looking for :(";
+        }
+
     });
-    return foundResults;
+    return foundResults; //returns array
 }
 
 
 inputField.addEventListener("keyup", function(event){
-    // search for results
+    // searches for results
     const results = findResult(event.target.value);
     
     // this clears previous results
@@ -411,7 +418,9 @@ inputField.addEventListener("keyup", function(event){
             result.title,
             result.description
         ))); 
-    } else {
-        prompt("No results.");
+    }   
+    else {
+
     }
+    
 });

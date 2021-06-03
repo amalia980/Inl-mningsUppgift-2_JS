@@ -4,3 +4,5 @@ Innan jag gör någonting pushar jag upp alla filer till Github så att jag kan 
 i framtiden.
 
 Jag försöker göra klart alla missade "pusselbitar" från upp och ner.
+
+först då ville jag skapa HTML element i javascript filen, jag tänkte se om man kunde skapa HTML i en enda lång string, så som såhär exempel.innerHTMl = '<li>' + '<article> osv..
