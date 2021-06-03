@@ -1,8 +1,19 @@
 Rapport Inlämningsuppgift 2 - Javascript
 
-Innan jag gör någonting pushar jag upp alla filer till Github så att jag kan se original koden om jag skulle ändra alltför mycket 
-i framtiden.
+Innan jag gör någonting pushar jag upp alla filer till Github så att jag kan se original koden om jag skulle ändra alltför mycket i framtiden.
 
-Jag försöker göra klart alla missade "pusselbitar" från upp och ner.
+Utförande:
 
-först då ville jag skapa HTML element i javascript filen, jag tänkte se om man kunde skapa HTML i en enda lång string, så som såhär exempel.innerHTMl = '<li>' + '<article> osv..
+Första funktionen:
+Jag vill först skapa HTML elementen i javascript filen, jag tänkte testa om man kunde skapa HTML i en enda lång string, så man inte behöver använda appendChild varenda gång för elementen. t.ex så som såhär exempel.innerHTMl = '<li>' + '<article> osv..
+Men jag insåg att det inte blev något vettigt utav det, så jag skapade createElement av alla element som behövdes och gjorde appendChild för alla. Jag lade också till className så stylingen från css filen kunde läggas på article, header och div elementen.
+
+Andra funktionen:
+I nästa funktionen med "function findResult (query)" ska vi söka igenom arrayen för att kunna hitta matchande resultat av userinput, då behöver vi skapa en loop for arrayen (RESULTS).
+
+Nu kommer vi till "query" som är själva strängen av userinput värdet.
+Jag skapade en variabel för query, jag använde variablen i en if sats för att jämföra titeln och beskrivningen om arrayen inkluderar ett value i foundresults kommer den att pusha resultaten för visas upp på webbsidan. Om det inte blev en matching uppvisas ingenting.
+
+Slutsats:
+
+För debugging har jag inte använt breakpoints eller "debugger;" särskilt mycket, utan konsollen har varit mycket till hjälp för att hitta errors. Annars har det hjälpt att skriva console.log vid ställen man är osäker om koden fungerar eller inte, eller var värden hamnar.

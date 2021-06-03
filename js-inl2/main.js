@@ -2,7 +2,7 @@
 // scroll down to find the rest of the code.
 const RESULTS = [{
     "id": 1,
-    "title": "Cannibal! The Musical (a.k.a. Alferd Packer: The Musical)",
+    "title": "Cannibal! The Musical (a.k.a. Alferd Packer: The Musical)\t",
     "description": "Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.\n\nIn congue. Etiam justo. Etiam pretium iaculis justo.",
     "image": "Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui."
 }, {
@@ -349,11 +349,8 @@ Finish this function, it should return a HTML element that looks like this:
 */
 
 //this is how the results should display
-
 function createResultElement(title, description) {
 
-    //first section
-    
     const liTag = document.createElement('li'); //<li> tag
 
     const articleTag = document.createElement('article'); //<article> tag
@@ -369,12 +366,9 @@ function createResultElement(title, description) {
 
     liTag.appendChild(articleTag); //<article> inside <li> 
     articleTag.appendChild(headerTag); // <header> inside <article>
-    articleTag.appendChild(divTag); // <div> inside <article>
-
-    //error message box  
+    articleTag.appendChild(divTag); // <div> inside <article> 
 
     return liTag;
-
 }
 
 // Finish this function
@@ -386,19 +380,15 @@ function findResult(query) {
 
     const foundResults = []; //array
     const queryLower = query.toLowerCase();
-
+//the forEach goes through the array
     RESULTS.forEach(function(item) {
         const title = item.title.toLowerCase();
         const description = item.description.toLowerCase();
-
-        if(title.includes(queryLower) || description.includes(queryLower)) {//compares title and description
+// whether the user input is in lower or uppercase the value will convert to lowercase
+//if title/description is matched with array, it pushes(item) the results 
+        if(title.includes(queryLower) || description.includes(queryLower)) {
             foundResults.push(item); //will display the results
         }
-        else {
-            const error = document.getElementById('error');
-            error.innerText = "sorry, we can't find what you are looking for :(";
-        }
-
     });
     return foundResults; //returns array
 }
