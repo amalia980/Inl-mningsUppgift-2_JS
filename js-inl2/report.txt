@@ -9,11 +9,13 @@ Jag vill först skapa HTML elementen i javascript filen, jag tänkte testa om ma
 Men jag insåg att det inte blev något vettigt utav det, så jag skapade createElement av alla element som behövdes och gjorde appendChild för alla. Jag lade också till className så stylingen från css filen kunde läggas på article, header och div elementen.
 
 Andra funktionen:
-I nästa funktionen med "function findResult (query)" ska vi söka igenom arrayen för att kunna hitta matchande resultat av userinput, då behöver vi skapa en loop for arrayen (RESULTS).
+I nästa funktion med "funktion findResult (query)" kommer vi att söka igenom arrayen (RESULTS) för att kunna hitta matchande resultat för user input, då måste vi skapa en loop för arrayen (RESULTS).
 
-Nu kommer vi till "query" som är själva strängen av userinput värdet.
-Jag skapade en variabel för query, jag använde variablen i en if sats för att jämföra titeln och beskrivningen om arrayen inkluderar ett value i foundresults kommer den att pusha resultaten för visas upp på webbsidan. Om det inte blev en matching uppvisas ingenting.
+Och vi måste också skapa en ny array som lagrar alla matchande resultat, jag kallade den "foundResults". foundResults kommer att lagra data i en if-sats.
+
+Nu kommer vi till "query" som är själva strängen för användarens user input värde.
+Jag skapade en variabel för query som heter "queryLower", jag använde variabeln i if-satsen för att jämföra titeln och beskrivningen om arrayen innehåller ett värde i foundResults, det kommer att pusha resultaten och visas på webbsidan med HTML elementenav "function createElement" funktionen. Om det inte fanns någon matchning visas inget.
 
 Slutsats:
 
-För debugging har jag inte använt breakpoints eller "debugger;" särskilt mycket, utan konsollen har varit mycket till hjälp för att hitta errors. Annars har det hjälpt att skriva console.log vid ställen man är osäker om koden fungerar eller inte, eller var värden hamnar.
+För debugging har jag inte använt breakpoints eller "debugger;" särskilt mycket, utan konsollen har varit mycket till hjälp för att hitta errors. Annars har det hjälpt att skriva console.log vid ställen man är osäker om koden fungerar eller inte, om det returnerar som det ska osv. Annars har resurser som stackoverflow och w3schools samt varit till nytta.
